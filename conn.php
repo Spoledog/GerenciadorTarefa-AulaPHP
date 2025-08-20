@@ -1,7 +1,7 @@
 <?php
 
 $servername = "localhost:3306";
-$usarname = "root";
+$username = "root";
 $password = "root";
 $dbname = "tasks";
 

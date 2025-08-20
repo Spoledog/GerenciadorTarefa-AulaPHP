@@ -3,7 +3,7 @@
 require_once 'conn.php';
 
 try {
-    if($_SERVER["REQUST_METHOD"]== "POST"){
+    if($_SERVER["REQUEST_METHOD"]== "POST"){
         $title = isset($_POST['title']) ? $_POST['title'] : null;
         $descriptionm= isset($_POST['description'])  ? $_POST['description']: null;
 
