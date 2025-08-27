@@ -5,7 +5,7 @@ require_once 'conn.php';
 try {
     if($_SERVER["REQUEST_METHOD"]== "POST"){
         $title = isset($_POST['title']) ? $_POST['title'] : null;
-        $descriptionm= isset($_POST['description'])  ? $_POST['description']: null;
+        $description= isset($_POST['description'])  ? $_POST['description']: null;
 
     if ($title) {
         $sql = "INSERT INTO crud_php (title, description) VALUES (?,?)";

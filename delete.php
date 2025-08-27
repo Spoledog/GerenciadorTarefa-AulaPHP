@@ -11,7 +11,7 @@ try {
 
         if($stmt) {
             $stmt->bind_param("i", $id);
-            if ($tmr->execute()) {
+            if ($stmt->execute()) {
                 header("Location: index.php");
                 exit();
             } else {
