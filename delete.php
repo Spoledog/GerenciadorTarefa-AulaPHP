@@ -1,21 +1,21 @@
-<?php 
+<?php
 
 require_once 'conn.php';
 
 try {
-    if(isset($_GET['id'])){
+    if (isset($_GET['id'])) {
         $id = $_GET['id'];
 
         $sql = "DELETE FROM crud_php WHERE id = ?";
         $stmt = $conn->prepare($sql);
 
-        if($stmt) {
+        if ($stmt) {
             $stmt->bind_param("i", $id);
             if ($stmt->execute()) {
                 header("Location: index.php");
                 exit();
             } else {
-                throw new Exception("Erro ao executar a exclusão: " .$stmt->error);
+                throw new Exception("Erro ao executar a exclusão: " . $stmt->error);
             }
 
             $stmt->close();

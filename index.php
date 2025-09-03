@@ -72,7 +72,7 @@
                                     <tr>
                                         <td><?php echo $row['id']; ?></td>
                                         <td><?php echo $row['title']; ?></td>
-                                        <td><?= substr($row['description'], 0,20) . '...' ?></td>
+                                        <td><?= substr($row['description'], 0, 20) . '...' ?></td>
                                         <td><?= date("d/m/Y", strtotime($row['created_at'])); ?></td>
                                         <td><a href="edit.php?id=<?= $row['id']; ?>" class="btn btn-secondary">
                                                 <i class="fas fa-marker"></i>
