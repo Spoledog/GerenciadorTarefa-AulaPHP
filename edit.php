@@ -13,6 +13,9 @@ $id = isset($_GET['id']) ? $_GET['id'] : null;
 
 if (!$id) {
     echo "ID da tarefa não fornecido!";
+    $_SESSION['message'] = "ID da tarefa não fornecido";
+    $_SESSION['message_type'] = "danger";
+    header('Location: index.php');
     exit();
 }
 
@@ -33,7 +36,10 @@ try {
         }
         $stmt->close();
     } else {
-        throw new Exception("Erro ao preparar consulta " . $conn->error);
+        $_SESSION['message'] = "Erro aao preparar consulta";
+        $_SESSION['message_type'] = "danger";
+        header('Location: index.php');
+        exit();
     }
 } catch (Exception $e) {
     echo "Erro " . $e->getMessage();
